@@ -1,1 +1,2 @@
-Test on pc;
+Test on Gig;
+Test on GitHub;
