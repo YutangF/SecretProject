@@ -41,32 +41,32 @@
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.container_Main = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
-            this.panel_1 = new System.Windows.Forms.Panel();
-            this.panel_2 = new System.Windows.Forms.Panel();
-            this.panel_3 = new System.Windows.Forms.Panel();
-            this.btn_GetDownloadLinks = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_ClassifyClassicTorrents = new System.Windows.Forms.Button();
-            this.btn_SetHandleTempPath = new System.Windows.Forms.Button();
-            this.numericUpDown_GetTorrentsCount = new System.Windows.Forms.NumericUpDown();
-            this.btn_ChooseClassicTorrents = new System.Windows.Forms.Button();
-            this.btn_ChooseCommonTorrents = new System.Windows.Forms.Button();
-            this.btn_ChooseiCloudPath = new System.Windows.Forms.Button();
             this.panel_4 = new System.Windows.Forms.Panel();
             this.label_RARFilesCount = new System.Windows.Forms.Label();
             this.label_Text = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel_3 = new System.Windows.Forms.Panel();
+            this.btn_GetDownloadLinks = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel_2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_SetHandleTempPath = new System.Windows.Forms.Button();
+            this.btn_ChooseCommonTorrents = new System.Windows.Forms.Button();
+            this.btn_ChooseClassicTorrents = new System.Windows.Forms.Button();
+            this.numericUpDown_GetTorrentsCount = new System.Windows.Forms.NumericUpDown();
+            this.panel_1 = new System.Windows.Forms.Panel();
+            this.btn_ChooseiCloudPath = new System.Windows.Forms.Button();
             this.btn_ClassifyCommonTorrents = new System.Windows.Forms.Button();
+            this.btn_ClassifyClassicTorrents = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.container_Main.SuspendLayout();
-            this.panel_1.SuspendLayout();
-            this.panel_2.SuspendLayout();
-            this.panel_3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GetTorrentsCount)).BeginInit();
             this.panel_4.SuspendLayout();
+            this.panel_3.SuspendLayout();
+            this.panel_2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GetTorrentsCount)).BeginInit();
+            this.panel_1.SuspendLayout();
             this.SuspendLayout();
             // 
             // accordionControl1
@@ -210,172 +210,14 @@
             this.container_Main.Appearance.Options.UseBackColor = true;
             this.container_Main.AutoScroll = false;
             this.container_Main.Controls.Add(this.panel_1);
+            this.container_Main.Controls.Add(this.panel_4);
+            this.container_Main.Controls.Add(this.panel_3);
+            this.container_Main.Controls.Add(this.panel_2);
             this.container_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container_Main.Location = new System.Drawing.Point(433, 45);
             this.container_Main.Name = "container_Main";
             this.container_Main.Size = new System.Drawing.Size(1333, 1225);
             this.container_Main.TabIndex = 0;
-            // 
-            // panel_1
-            // 
-            this.panel_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_1.Controls.Add(this.panel_2);
-            this.panel_1.Location = new System.Drawing.Point(0, 0);
-            this.panel_1.Name = "panel_1";
-            this.panel_1.Size = new System.Drawing.Size(1322, 1223);
-            this.panel_1.TabIndex = 0;
-            // 
-            // panel_2
-            // 
-            this.panel_2.Controls.Add(this.panel_3);
-            this.panel_2.Location = new System.Drawing.Point(0, 0);
-            this.panel_2.Name = "panel_2";
-            this.panel_2.Size = new System.Drawing.Size(1320, 1228);
-            this.panel_2.TabIndex = 1;
-            // 
-            // panel_3
-            // 
-            this.panel_3.Controls.Add(this.btn_GetDownloadLinks);
-            this.panel_3.Controls.Add(this.label3);
-            this.panel_3.Controls.Add(this.label2);
-            this.panel_3.Controls.Add(this.label1);
-            this.panel_3.Controls.Add(this.btn_ClassifyClassicTorrents);
-            this.panel_3.Controls.Add(this.btn_SetHandleTempPath);
-            this.panel_3.Controls.Add(this.numericUpDown_GetTorrentsCount);
-            this.panel_3.Controls.Add(this.btn_ChooseClassicTorrents);
-            this.panel_3.Controls.Add(this.btn_ChooseCommonTorrents);
-            this.panel_3.Controls.Add(this.btn_ChooseiCloudPath);
-            this.panel_3.Controls.Add(this.panel_4);
-            this.panel_3.Controls.Add(this.btn_ClassifyCommonTorrents);
-            this.panel_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_3.Location = new System.Drawing.Point(0, 0);
-            this.panel_3.Name = "panel_3";
-            this.panel_3.Size = new System.Drawing.Size(1320, 1228);
-            this.panel_3.TabIndex = 1;
-            // 
-            // btn_GetDownloadLinks
-            // 
-            this.btn_GetDownloadLinks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_GetDownloadLinks.Location = new System.Drawing.Point(376, 473);
-            this.btn_GetDownloadLinks.Name = "btn_GetDownloadLinks";
-            this.btn_GetDownloadLinks.Size = new System.Drawing.Size(501, 244);
-            this.btn_GetDownloadLinks.TabIndex = 10;
-            this.btn_GetDownloadLinks.Text = "Get Download Links";
-            this.btn_GetDownloadLinks.UseVisualStyleBackColor = true;
-            this.btn_GetDownloadLinks.Click += new System.EventHandler(this.btn_GetDownloadLinks_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1102, 1108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 22);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1114, 1114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1118, 1116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // btn_ClassifyClassicTorrents
-            // 
-            this.btn_ClassifyClassicTorrents.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_ClassifyClassicTorrents.Location = new System.Drawing.Point(648, 381);
-            this.btn_ClassifyClassicTorrents.Name = "btn_ClassifyClassicTorrents";
-            this.btn_ClassifyClassicTorrents.Size = new System.Drawing.Size(275, 119);
-            this.btn_ClassifyClassicTorrents.TabIndex = 5;
-            this.btn_ClassifyClassicTorrents.Text = "Classify Classic Torrents";
-            this.btn_ClassifyClassicTorrents.UseVisualStyleBackColor = true;
-            this.btn_ClassifyClassicTorrents.Click += new System.EventHandler(this.btn_ClassifyClassicTorrents_Click);
-            // 
-            // btn_SetHandleTempPath
-            // 
-            this.btn_SetHandleTempPath.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SetHandleTempPath.Location = new System.Drawing.Point(400, 175);
-            this.btn_SetHandleTempPath.Name = "btn_SetHandleTempPath";
-            this.btn_SetHandleTempPath.Size = new System.Drawing.Size(275, 119);
-            this.btn_SetHandleTempPath.TabIndex = 9;
-            this.btn_SetHandleTempPath.Text = "Set Torrents Temp Path";
-            this.btn_SetHandleTempPath.UseVisualStyleBackColor = true;
-            this.btn_SetHandleTempPath.Click += new System.EventHandler(this.btn_SetHandleTempPath_Click);
-            // 
-            // numericUpDown_GetTorrentsCount
-            // 
-            this.numericUpDown_GetTorrentsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown_GetTorrentsCount.Font = new System.Drawing.Font("Tahoma", 40F);
-            this.numericUpDown_GetTorrentsCount.Location = new System.Drawing.Point(501, 389);
-            this.numericUpDown_GetTorrentsCount.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.numericUpDown_GetTorrentsCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown_GetTorrentsCount.Name = "numericUpDown_GetTorrentsCount";
-            this.numericUpDown_GetTorrentsCount.Size = new System.Drawing.Size(117, 104);
-            this.numericUpDown_GetTorrentsCount.TabIndex = 8;
-            this.numericUpDown_GetTorrentsCount.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numericUpDown_GetTorrentsCount.ValueChanged += new System.EventHandler(this.numericUpDown_GetTorrentsCount_ValueChanged);
-            // 
-            // btn_ChooseClassicTorrents
-            // 
-            this.btn_ChooseClassicTorrents.Location = new System.Drawing.Point(648, 381);
-            this.btn_ChooseClassicTorrents.Name = "btn_ChooseClassicTorrents";
-            this.btn_ChooseClassicTorrents.Size = new System.Drawing.Size(275, 119);
-            this.btn_ChooseClassicTorrents.TabIndex = 7;
-            this.btn_ChooseClassicTorrents.Text = "Choose Classic Torrents";
-            this.btn_ChooseClassicTorrents.UseVisualStyleBackColor = true;
-            this.btn_ChooseClassicTorrents.Click += new System.EventHandler(this.btn_ChooseClassicTorrents_Click);
-            // 
-            // btn_ChooseCommonTorrents
-            // 
-            this.btn_ChooseCommonTorrents.Location = new System.Drawing.Point(192, 381);
-            this.btn_ChooseCommonTorrents.Name = "btn_ChooseCommonTorrents";
-            this.btn_ChooseCommonTorrents.Size = new System.Drawing.Size(275, 119);
-            this.btn_ChooseCommonTorrents.TabIndex = 6;
-            this.btn_ChooseCommonTorrents.Text = "Choose Common Torrents";
-            this.btn_ChooseCommonTorrents.UseVisualStyleBackColor = true;
-            this.btn_ChooseCommonTorrents.Click += new System.EventHandler(this.btn_ChooseCommonTorrents_Click);
-            // 
-            // btn_ChooseiCloudPath
-            // 
-            this.btn_ChooseiCloudPath.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_ChooseiCloudPath.Location = new System.Drawing.Point(189, 181);
-            this.btn_ChooseiCloudPath.Name = "btn_ChooseiCloudPath";
-            this.btn_ChooseiCloudPath.Size = new System.Drawing.Size(278, 107);
-            this.btn_ChooseiCloudPath.TabIndex = 3;
-            this.btn_ChooseiCloudPath.Text = "Set iCloud Path";
-            this.btn_ChooseiCloudPath.UseVisualStyleBackColor = true;
-            this.btn_ChooseiCloudPath.Click += new System.EventHandler(this.btn_ChooseiCloudPath_Click);
             // 
             // panel_4
             // 
@@ -385,7 +227,7 @@
             this.panel_4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_4.Location = new System.Drawing.Point(0, 0);
             this.panel_4.Name = "panel_4";
-            this.panel_4.Size = new System.Drawing.Size(1320, 1228);
+            this.panel_4.Size = new System.Drawing.Size(1333, 1225);
             this.panel_4.TabIndex = 13;
             // 
             // label_RARFilesCount
@@ -422,16 +264,174 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "label4";
             // 
+            // panel_3
+            // 
+            this.panel_3.Controls.Add(this.btn_GetDownloadLinks);
+            this.panel_3.Controls.Add(this.label3);
+            this.panel_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_3.Location = new System.Drawing.Point(0, 0);
+            this.panel_3.Name = "panel_3";
+            this.panel_3.Size = new System.Drawing.Size(1333, 1225);
+            this.panel_3.TabIndex = 1;
+            // 
+            // btn_GetDownloadLinks
+            // 
+            this.btn_GetDownloadLinks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_GetDownloadLinks.Location = new System.Drawing.Point(376, 473);
+            this.btn_GetDownloadLinks.Name = "btn_GetDownloadLinks";
+            this.btn_GetDownloadLinks.Size = new System.Drawing.Size(514, 241);
+            this.btn_GetDownloadLinks.TabIndex = 10;
+            this.btn_GetDownloadLinks.Text = "Get Download Links";
+            this.btn_GetDownloadLinks.UseVisualStyleBackColor = true;
+            this.btn_GetDownloadLinks.Click += new System.EventHandler(this.btn_GetDownloadLinks_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1102, 1108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 22);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            // 
+            // panel_2
+            // 
+            this.panel_2.Controls.Add(this.label2);
+            this.panel_2.Controls.Add(this.btn_SetHandleTempPath);
+            this.panel_2.Controls.Add(this.btn_ChooseCommonTorrents);
+            this.panel_2.Controls.Add(this.btn_ChooseClassicTorrents);
+            this.panel_2.Controls.Add(this.numericUpDown_GetTorrentsCount);
+            this.panel_2.Location = new System.Drawing.Point(0, 0);
+            this.panel_2.Name = "panel_2";
+            this.panel_2.Size = new System.Drawing.Size(1320, 1228);
+            this.panel_2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1114, 1114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 22);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            // 
+            // btn_SetHandleTempPath
+            // 
+            this.btn_SetHandleTempPath.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_SetHandleTempPath.Location = new System.Drawing.Point(400, 175);
+            this.btn_SetHandleTempPath.Name = "btn_SetHandleTempPath";
+            this.btn_SetHandleTempPath.Size = new System.Drawing.Size(288, 116);
+            this.btn_SetHandleTempPath.TabIndex = 9;
+            this.btn_SetHandleTempPath.Text = "Set Torrents Temp Path";
+            this.btn_SetHandleTempPath.UseVisualStyleBackColor = true;
+            this.btn_SetHandleTempPath.Click += new System.EventHandler(this.btn_SetHandleTempPath_Click);
+            // 
+            // btn_ChooseCommonTorrents
+            // 
+            this.btn_ChooseCommonTorrents.Location = new System.Drawing.Point(192, 381);
+            this.btn_ChooseCommonTorrents.Name = "btn_ChooseCommonTorrents";
+            this.btn_ChooseCommonTorrents.Size = new System.Drawing.Size(275, 119);
+            this.btn_ChooseCommonTorrents.TabIndex = 6;
+            this.btn_ChooseCommonTorrents.Text = "Choose Common Torrents";
+            this.btn_ChooseCommonTorrents.UseVisualStyleBackColor = true;
+            this.btn_ChooseCommonTorrents.Click += new System.EventHandler(this.btn_ChooseCommonTorrents_Click);
+            // 
+            // btn_ChooseClassicTorrents
+            // 
+            this.btn_ChooseClassicTorrents.Location = new System.Drawing.Point(648, 381);
+            this.btn_ChooseClassicTorrents.Name = "btn_ChooseClassicTorrents";
+            this.btn_ChooseClassicTorrents.Size = new System.Drawing.Size(275, 119);
+            this.btn_ChooseClassicTorrents.TabIndex = 7;
+            this.btn_ChooseClassicTorrents.Text = "Choose Classic Torrents";
+            this.btn_ChooseClassicTorrents.UseVisualStyleBackColor = true;
+            this.btn_ChooseClassicTorrents.Click += new System.EventHandler(this.btn_ChooseClassicTorrents_Click);
+            // 
+            // numericUpDown_GetTorrentsCount
+            // 
+            this.numericUpDown_GetTorrentsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDown_GetTorrentsCount.Font = new System.Drawing.Font("Tahoma", 40F);
+            this.numericUpDown_GetTorrentsCount.Location = new System.Drawing.Point(501, 389);
+            this.numericUpDown_GetTorrentsCount.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDown_GetTorrentsCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_GetTorrentsCount.Name = "numericUpDown_GetTorrentsCount";
+            this.numericUpDown_GetTorrentsCount.Size = new System.Drawing.Size(130, 104);
+            this.numericUpDown_GetTorrentsCount.TabIndex = 8;
+            this.numericUpDown_GetTorrentsCount.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numericUpDown_GetTorrentsCount.ValueChanged += new System.EventHandler(this.numericUpDown_GetTorrentsCount_ValueChanged);
+            // 
+            // panel_1
+            // 
+            this.panel_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_1.Controls.Add(this.btn_ChooseiCloudPath);
+            this.panel_1.Controls.Add(this.btn_ClassifyCommonTorrents);
+            this.panel_1.Controls.Add(this.btn_ClassifyClassicTorrents);
+            this.panel_1.Controls.Add(this.label1);
+            this.panel_1.Location = new System.Drawing.Point(0, 0);
+            this.panel_1.Name = "panel_1";
+            this.panel_1.Size = new System.Drawing.Size(1322, 1223);
+            this.panel_1.TabIndex = 0;
+            // 
+            // btn_ChooseiCloudPath
+            // 
+            this.btn_ChooseiCloudPath.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_ChooseiCloudPath.Location = new System.Drawing.Point(195, 179);
+            this.btn_ChooseiCloudPath.Name = "btn_ChooseiCloudPath";
+            this.btn_ChooseiCloudPath.Size = new System.Drawing.Size(278, 107);
+            this.btn_ChooseiCloudPath.TabIndex = 3;
+            this.btn_ChooseiCloudPath.Text = "Set iCloud Path";
+            this.btn_ChooseiCloudPath.UseVisualStyleBackColor = true;
+            this.btn_ChooseiCloudPath.Click += new System.EventHandler(this.btn_ChooseiCloudPath_Click);
+            // 
             // btn_ClassifyCommonTorrents
             // 
             this.btn_ClassifyCommonTorrents.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_ClassifyCommonTorrents.Location = new System.Drawing.Point(192, 381);
+            this.btn_ClassifyCommonTorrents.Location = new System.Drawing.Point(198, 379);
             this.btn_ClassifyCommonTorrents.Name = "btn_ClassifyCommonTorrents";
             this.btn_ClassifyCommonTorrents.Size = new System.Drawing.Size(275, 119);
             this.btn_ClassifyCommonTorrents.TabIndex = 4;
             this.btn_ClassifyCommonTorrents.Text = "Classify Common Torrents";
             this.btn_ClassifyCommonTorrents.UseVisualStyleBackColor = true;
             this.btn_ClassifyCommonTorrents.Click += new System.EventHandler(this.btn_ClassifyCommonTorrents_Click);
+            // 
+            // btn_ClassifyClassicTorrents
+            // 
+            this.btn_ClassifyClassicTorrents.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_ClassifyClassicTorrents.Location = new System.Drawing.Point(654, 379);
+            this.btn_ClassifyClassicTorrents.Name = "btn_ClassifyClassicTorrents";
+            this.btn_ClassifyClassicTorrents.Size = new System.Drawing.Size(275, 119);
+            this.btn_ClassifyClassicTorrents.TabIndex = 5;
+            this.btn_ClassifyClassicTorrents.Text = "Classify Classic Torrents";
+            this.btn_ClassifyClassicTorrents.UseVisualStyleBackColor = true;
+            this.btn_ClassifyClassicTorrents.Click += new System.EventHandler(this.btn_ClassifyClassicTorrents_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1118, 1116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // MainForm
             // 
@@ -453,13 +453,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.container_Main.ResumeLayout(false);
-            this.panel_1.ResumeLayout(false);
-            this.panel_2.ResumeLayout(false);
-            this.panel_3.ResumeLayout(false);
-            this.panel_3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GetTorrentsCount)).EndInit();
             this.panel_4.ResumeLayout(false);
             this.panel_4.PerformLayout();
+            this.panel_3.ResumeLayout(false);
+            this.panel_3.PerformLayout();
+            this.panel_2.ResumeLayout(false);
+            this.panel_2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GetTorrentsCount)).EndInit();
+            this.panel_1.ResumeLayout(false);
+            this.panel_1.PerformLayout();
             this.ResumeLayout(false);
 
         }
