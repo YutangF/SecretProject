@@ -181,6 +181,7 @@
             this.accordionControlElement4.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement4.Appearance.Hovered.Options.UseBackColor = true;
             this.accordionControlElement4.Appearance.Hovered.Options.UseFont = true;
+            this.accordionControlElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4.ImageOptions.Image")));
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement4.Text = "Open RAR Files Path";
