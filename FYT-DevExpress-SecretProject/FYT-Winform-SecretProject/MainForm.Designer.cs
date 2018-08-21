@@ -59,6 +59,10 @@
             this.btn_ClassifyCommonTorrents = new System.Windows.Forms.Button();
             this.btn_ClassifyClassicTorrents = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txb_ClassifyFileName = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txb_TorrentsToDownload = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.container_Main.SuspendLayout();
@@ -209,10 +213,10 @@
             this.container_Main.Appearance.BackColor = System.Drawing.Color.White;
             this.container_Main.Appearance.Options.UseBackColor = true;
             this.container_Main.AutoScroll = false;
+            this.container_Main.Controls.Add(this.panel_2);
             this.container_Main.Controls.Add(this.panel_1);
             this.container_Main.Controls.Add(this.panel_4);
             this.container_Main.Controls.Add(this.panel_3);
-            this.container_Main.Controls.Add(this.panel_2);
             this.container_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container_Main.Location = new System.Drawing.Point(433, 45);
             this.container_Main.Name = "container_Main";
@@ -298,6 +302,8 @@
             // 
             // panel_2
             // 
+            this.panel_2.Controls.Add(this.label6);
+            this.panel_2.Controls.Add(this.txb_TorrentsToDownload);
             this.panel_2.Controls.Add(this.label2);
             this.panel_2.Controls.Add(this.btn_SetHandleTempPath);
             this.panel_2.Controls.Add(this.btn_ChooseCommonTorrents);
@@ -322,7 +328,7 @@
             this.btn_SetHandleTempPath.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SetHandleTempPath.Location = new System.Drawing.Point(400, 175);
+            this.btn_SetHandleTempPath.Location = new System.Drawing.Point(255, 279);
             this.btn_SetHandleTempPath.Name = "btn_SetHandleTempPath";
             this.btn_SetHandleTempPath.Size = new System.Drawing.Size(288, 116);
             this.btn_SetHandleTempPath.TabIndex = 9;
@@ -332,7 +338,7 @@
             // 
             // btn_ChooseCommonTorrents
             // 
-            this.btn_ChooseCommonTorrents.Location = new System.Drawing.Point(192, 381);
+            this.btn_ChooseCommonTorrents.Location = new System.Drawing.Point(47, 485);
             this.btn_ChooseCommonTorrents.Name = "btn_ChooseCommonTorrents";
             this.btn_ChooseCommonTorrents.Size = new System.Drawing.Size(275, 119);
             this.btn_ChooseCommonTorrents.TabIndex = 6;
@@ -342,7 +348,7 @@
             // 
             // btn_ChooseClassicTorrents
             // 
-            this.btn_ChooseClassicTorrents.Location = new System.Drawing.Point(648, 381);
+            this.btn_ChooseClassicTorrents.Location = new System.Drawing.Point(503, 485);
             this.btn_ChooseClassicTorrents.Name = "btn_ChooseClassicTorrents";
             this.btn_ChooseClassicTorrents.Size = new System.Drawing.Size(275, 119);
             this.btn_ChooseClassicTorrents.TabIndex = 7;
@@ -356,7 +362,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown_GetTorrentsCount.Font = new System.Drawing.Font("Tahoma", 40F);
-            this.numericUpDown_GetTorrentsCount.Location = new System.Drawing.Point(501, 389);
+            this.numericUpDown_GetTorrentsCount.Location = new System.Drawing.Point(356, 493);
             this.numericUpDown_GetTorrentsCount.Maximum = new decimal(new int[] {
             50,
             0,
@@ -382,6 +388,8 @@
             this.panel_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_1.Controls.Add(this.label5);
+            this.panel_1.Controls.Add(this.txb_ClassifyFileName);
             this.panel_1.Controls.Add(this.btn_ChooseiCloudPath);
             this.panel_1.Controls.Add(this.btn_ClassifyCommonTorrents);
             this.panel_1.Controls.Add(this.btn_ClassifyClassicTorrents);
@@ -416,7 +424,7 @@
             // btn_ClassifyClassicTorrents
             // 
             this.btn_ClassifyClassicTorrents.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_ClassifyClassicTorrents.Location = new System.Drawing.Point(654, 379);
+            this.btn_ClassifyClassicTorrents.Location = new System.Drawing.Point(198, 575);
             this.btn_ClassifyClassicTorrents.Name = "btn_ClassifyClassicTorrents";
             this.btn_ClassifyClassicTorrents.Size = new System.Drawing.Size(275, 119);
             this.btn_ClassifyClassicTorrents.TabIndex = 5;
@@ -432,6 +440,62 @@
             this.label1.Size = new System.Drawing.Size(56, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+            // 
+            // txb_ClassifyFileName
+            // 
+            this.txb_ClassifyFileName.BackColor = System.Drawing.Color.DimGray;
+            this.txb_ClassifyFileName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_ClassifyFileName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txb_ClassifyFileName.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txb_ClassifyFileName.ForeColor = System.Drawing.Color.White;
+            this.txb_ClassifyFileName.Location = new System.Drawing.Point(584, 179);
+            this.txb_ClassifyFileName.Name = "txb_ClassifyFileName";
+            this.txb_ClassifyFileName.ReadOnly = true;
+            this.txb_ClassifyFileName.Size = new System.Drawing.Size(338, 523);
+            this.txb_ClassifyFileName.TabIndex = 6;
+            this.txb_ClassifyFileName.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.DimGray;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(648, 133);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(199, 41);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "移动文件监视";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.DimGray;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(950, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(199, 41);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "提取文件监视";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txb_TorrentsToDownload
+            // 
+            this.txb_TorrentsToDownload.BackColor = System.Drawing.Color.DimGray;
+            this.txb_TorrentsToDownload.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_TorrentsToDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txb_TorrentsToDownload.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txb_TorrentsToDownload.ForeColor = System.Drawing.Color.White;
+            this.txb_TorrentsToDownload.Location = new System.Drawing.Point(886, 257);
+            this.txb_TorrentsToDownload.Name = "txb_TorrentsToDownload";
+            this.txb_TorrentsToDownload.ReadOnly = true;
+            this.txb_TorrentsToDownload.Size = new System.Drawing.Size(338, 523);
+            this.txb_TorrentsToDownload.TabIndex = 10;
+            this.txb_TorrentsToDownload.Text = "";
             // 
             // MainForm
             // 
@@ -497,6 +561,10 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private System.Windows.Forms.RichTextBox txb_ClassifyFileName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox txb_TorrentsToDownload;
     }
 }
 

@@ -242,7 +242,10 @@ namespace FYT_Winform_SecretProject
         {
             List<FileTimeInfo> list = new List<FileTimeInfo>();
             DirectoryInfo directoryInfo = new DirectoryInfo(folderPath);
-            var files = directoryInfo.GetFiles();
+            var allFiles = directoryInfo.GetFiles();
+            var files = from x in allFiles
+                        where x.Extension == ".rar"
+                        select x;
 
             foreach (var file in files)
             {
@@ -261,12 +264,14 @@ namespace FYT_Winform_SecretProject
         /// </summary>
         /// <param name="filePath"></param>
         /// <param name="count"></param>
-        private static void GetTorrentsFromiCloud(string filePath,string destPath,uint count)
+        private void GetTorrentsFromiCloud(string filePath,string destPath,uint count)
         {
+            txb_TorrentsToDownload.Clear();
             var files = GetFileList(filePath,count);
             foreach(var file in files)
             {
                 File.Move(file.FileName, Path.Combine(destPath, Path.GetFileName(file.FileName)));
+                txb_TorrentsToDownload.AppendText(Path.GetFileName(file.FileName) + "\n");
             }
         }
 
@@ -389,15 +394,20 @@ namespace FYT_Winform_SecretProject
         /// </summary>
         /// <param name="folderPath"></param>
         /// <param name="destPath"></param>
-        private static void MoveTorrents(string folderPath, string destPath = @"C:\Users\yutan\iCloudDrive\Documents\FYT\MTeam-TP\Complete")
+        private void MoveTorrents(string folderPath, string destPath = @"C:\Users\yutan\iCloudDrive\Documents\FYT\MTeam-TP\Complete")
         {
-            var fileNameList = Directory.EnumerateFiles(folderPath);
+            txb_ClassifyFileName.Clear();               //清空当前文本框内容
+            // var fileNameList = Directory.EnumerateFiles(folderPath);
+            var fileNameList = from x in Directory.EnumerateFiles(folderPath)
+                               where Path.GetExtension(x) == ".rar"
+                               select x;
 
             try
             {
                 foreach (var fileName in fileNameList)
                 {
                     File.Move(fileName, Path.Combine(destPath, Path.GetFileName(fileName)));
+                    txb_ClassifyFileName.AppendText(Path.GetFileName(fileName) + "\n");
                 }
             }
             catch (IOException e)
