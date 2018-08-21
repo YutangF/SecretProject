@@ -41,6 +41,21 @@
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.container_Main = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.panel_2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txb_TorrentsToDownload = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_SetHandleTempPath = new System.Windows.Forms.Button();
+            this.btn_ChooseCommonTorrents = new System.Windows.Forms.Button();
+            this.btn_ChooseClassicTorrents = new System.Windows.Forms.Button();
+            this.numericUpDown_GetTorrentsCount = new System.Windows.Forms.NumericUpDown();
+            this.panel_1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txb_ClassifyFileName = new System.Windows.Forms.RichTextBox();
+            this.btn_ChooseiCloudPath = new System.Windows.Forms.Button();
+            this.btn_ClassifyCommonTorrents = new System.Windows.Forms.Button();
+            this.btn_ClassifyClassicTorrents = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_4 = new System.Windows.Forms.Panel();
             this.label_RARFilesCount = new System.Windows.Forms.Label();
             this.label_Text = new System.Windows.Forms.Label();
@@ -48,29 +63,14 @@
             this.panel_3 = new System.Windows.Forms.Panel();
             this.btn_GetDownloadLinks = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel_2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_SetHandleTempPath = new System.Windows.Forms.Button();
-            this.btn_ChooseCommonTorrents = new System.Windows.Forms.Button();
-            this.btn_ChooseClassicTorrents = new System.Windows.Forms.Button();
-            this.numericUpDown_GetTorrentsCount = new System.Windows.Forms.NumericUpDown();
-            this.panel_1 = new System.Windows.Forms.Panel();
-            this.btn_ChooseiCloudPath = new System.Windows.Forms.Button();
-            this.btn_ClassifyCommonTorrents = new System.Windows.Forms.Button();
-            this.btn_ClassifyClassicTorrents = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txb_ClassifyFileName = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txb_TorrentsToDownload = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.container_Main.SuspendLayout();
-            this.panel_4.SuspendLayout();
-            this.panel_3.SuspendLayout();
             this.panel_2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GetTorrentsCount)).BeginInit();
             this.panel_1.SuspendLayout();
+            this.panel_4.SuspendLayout();
+            this.panel_3.SuspendLayout();
             this.SuspendLayout();
             // 
             // accordionControl1
@@ -224,83 +224,6 @@
             this.container_Main.Size = new System.Drawing.Size(1333, 1225);
             this.container_Main.TabIndex = 0;
             // 
-            // panel_4
-            // 
-            this.panel_4.Controls.Add(this.label_RARFilesCount);
-            this.panel_4.Controls.Add(this.label_Text);
-            this.panel_4.Controls.Add(this.label4);
-            this.panel_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_4.Location = new System.Drawing.Point(0, 0);
-            this.panel_4.Name = "panel_4";
-            this.panel_4.Size = new System.Drawing.Size(1333, 1225);
-            this.panel_4.TabIndex = 13;
-            // 
-            // label_RARFilesCount
-            // 
-            this.label_RARFilesCount.AutoSize = true;
-            this.label_RARFilesCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_RARFilesCount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label_RARFilesCount.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.label_RARFilesCount.Location = new System.Drawing.Point(943, 291);
-            this.label_RARFilesCount.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label_RARFilesCount.Name = "label_RARFilesCount";
-            this.label_RARFilesCount.Size = new System.Drawing.Size(44, 50);
-            this.label_RARFilesCount.TabIndex = 15;
-            this.label_RARFilesCount.Text = "0";
-            // 
-            // label_Text
-            // 
-            this.label_Text.AutoSize = true;
-            this.label_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_Text.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label_Text.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.label_Text.Location = new System.Drawing.Point(376, 291);
-            this.label_Text.Name = "label_Text";
-            this.label_Text.Size = new System.Drawing.Size(568, 50);
-            this.label_Text.TabIndex = 14;
-            this.label_Text.Text = "Completed RARFiles Number : ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1106, 1069);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 22);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "label4";
-            // 
-            // panel_3
-            // 
-            this.panel_3.Controls.Add(this.btn_GetDownloadLinks);
-            this.panel_3.Controls.Add(this.label3);
-            this.panel_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_3.Location = new System.Drawing.Point(0, 0);
-            this.panel_3.Name = "panel_3";
-            this.panel_3.Size = new System.Drawing.Size(1333, 1225);
-            this.panel_3.TabIndex = 1;
-            // 
-            // btn_GetDownloadLinks
-            // 
-            this.btn_GetDownloadLinks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_GetDownloadLinks.Location = new System.Drawing.Point(376, 473);
-            this.btn_GetDownloadLinks.Name = "btn_GetDownloadLinks";
-            this.btn_GetDownloadLinks.Size = new System.Drawing.Size(514, 241);
-            this.btn_GetDownloadLinks.TabIndex = 10;
-            this.btn_GetDownloadLinks.Text = "Get Download Links";
-            this.btn_GetDownloadLinks.UseVisualStyleBackColor = true;
-            this.btn_GetDownloadLinks.Click += new System.EventHandler(this.btn_GetDownloadLinks_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1102, 1108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 22);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            // 
             // panel_2
             // 
             this.panel_2.Controls.Add(this.label6);
@@ -314,6 +237,34 @@
             this.panel_2.Name = "panel_2";
             this.panel_2.Size = new System.Drawing.Size(1320, 1228);
             this.panel_2.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.DimGray;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(950, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(199, 41);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "提取文件监视";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txb_TorrentsToDownload
+            // 
+            this.txb_TorrentsToDownload.BackColor = System.Drawing.Color.DimGray;
+            this.txb_TorrentsToDownload.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_TorrentsToDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txb_TorrentsToDownload.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txb_TorrentsToDownload.ForeColor = System.Drawing.Color.White;
+            this.txb_TorrentsToDownload.Location = new System.Drawing.Point(886, 257);
+            this.txb_TorrentsToDownload.Name = "txb_TorrentsToDownload";
+            this.txb_TorrentsToDownload.ReadOnly = true;
+            this.txb_TorrentsToDownload.Size = new System.Drawing.Size(338, 523);
+            this.txb_TorrentsToDownload.TabIndex = 10;
+            this.txb_TorrentsToDownload.Text = "";
             // 
             // label2
             // 
@@ -400,6 +351,34 @@
             this.panel_1.Size = new System.Drawing.Size(1322, 1223);
             this.panel_1.TabIndex = 0;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.DimGray;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(648, 133);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(199, 41);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "移动文件监视";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txb_ClassifyFileName
+            // 
+            this.txb_ClassifyFileName.BackColor = System.Drawing.Color.DimGray;
+            this.txb_ClassifyFileName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_ClassifyFileName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txb_ClassifyFileName.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txb_ClassifyFileName.ForeColor = System.Drawing.Color.White;
+            this.txb_ClassifyFileName.Location = new System.Drawing.Point(584, 179);
+            this.txb_ClassifyFileName.Name = "txb_ClassifyFileName";
+            this.txb_ClassifyFileName.ReadOnly = true;
+            this.txb_ClassifyFileName.Size = new System.Drawing.Size(338, 523);
+            this.txb_ClassifyFileName.TabIndex = 6;
+            this.txb_ClassifyFileName.Text = "";
+            // 
             // btn_ChooseiCloudPath
             // 
             this.btn_ChooseiCloudPath.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -442,61 +421,82 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // txb_ClassifyFileName
+            // panel_4
             // 
-            this.txb_ClassifyFileName.BackColor = System.Drawing.Color.DimGray;
-            this.txb_ClassifyFileName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txb_ClassifyFileName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txb_ClassifyFileName.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txb_ClassifyFileName.ForeColor = System.Drawing.Color.White;
-            this.txb_ClassifyFileName.Location = new System.Drawing.Point(584, 179);
-            this.txb_ClassifyFileName.Name = "txb_ClassifyFileName";
-            this.txb_ClassifyFileName.ReadOnly = true;
-            this.txb_ClassifyFileName.Size = new System.Drawing.Size(338, 523);
-            this.txb_ClassifyFileName.TabIndex = 6;
-            this.txb_ClassifyFileName.Text = "";
+            this.panel_4.Controls.Add(this.label_RARFilesCount);
+            this.panel_4.Controls.Add(this.label_Text);
+            this.panel_4.Controls.Add(this.label4);
+            this.panel_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_4.Location = new System.Drawing.Point(0, 0);
+            this.panel_4.Name = "panel_4";
+            this.panel_4.Size = new System.Drawing.Size(1333, 1225);
+            this.panel_4.TabIndex = 13;
             // 
-            // label5
+            // label_RARFilesCount
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.DimGray;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(648, 133);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 41);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "移动文件监视";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_RARFilesCount.AutoSize = true;
+            this.label_RARFilesCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_RARFilesCount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label_RARFilesCount.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.label_RARFilesCount.Location = new System.Drawing.Point(943, 291);
+            this.label_RARFilesCount.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label_RARFilesCount.Name = "label_RARFilesCount";
+            this.label_RARFilesCount.Size = new System.Drawing.Size(44, 50);
+            this.label_RARFilesCount.TabIndex = 15;
+            this.label_RARFilesCount.Text = "0";
             // 
-            // label6
+            // label_Text
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.DimGray;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(950, 211);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(199, 41);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "提取文件监视";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Text.AutoSize = true;
+            this.label_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_Text.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label_Text.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.label_Text.Location = new System.Drawing.Point(376, 291);
+            this.label_Text.Name = "label_Text";
+            this.label_Text.Size = new System.Drawing.Size(568, 50);
+            this.label_Text.TabIndex = 14;
+            this.label_Text.Text = "Completed RARFiles Number : ";
             // 
-            // txb_TorrentsToDownload
+            // label4
             // 
-            this.txb_TorrentsToDownload.BackColor = System.Drawing.Color.DimGray;
-            this.txb_TorrentsToDownload.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txb_TorrentsToDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txb_TorrentsToDownload.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txb_TorrentsToDownload.ForeColor = System.Drawing.Color.White;
-            this.txb_TorrentsToDownload.Location = new System.Drawing.Point(886, 257);
-            this.txb_TorrentsToDownload.Name = "txb_TorrentsToDownload";
-            this.txb_TorrentsToDownload.ReadOnly = true;
-            this.txb_TorrentsToDownload.Size = new System.Drawing.Size(338, 523);
-            this.txb_TorrentsToDownload.TabIndex = 10;
-            this.txb_TorrentsToDownload.Text = "";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1106, 1069);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 22);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "label4";
+            // 
+            // panel_3
+            // 
+            this.panel_3.Controls.Add(this.btn_GetDownloadLinks);
+            this.panel_3.Controls.Add(this.label3);
+            this.panel_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_3.Location = new System.Drawing.Point(0, 0);
+            this.panel_3.Name = "panel_3";
+            this.panel_3.Size = new System.Drawing.Size(1333, 1225);
+            this.panel_3.TabIndex = 1;
+            // 
+            // btn_GetDownloadLinks
+            // 
+            this.btn_GetDownloadLinks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_GetDownloadLinks.Location = new System.Drawing.Point(376, 473);
+            this.btn_GetDownloadLinks.Name = "btn_GetDownloadLinks";
+            this.btn_GetDownloadLinks.Size = new System.Drawing.Size(514, 241);
+            this.btn_GetDownloadLinks.TabIndex = 10;
+            this.btn_GetDownloadLinks.Text = "Get Download Links";
+            this.btn_GetDownloadLinks.UseVisualStyleBackColor = true;
+            this.btn_GetDownloadLinks.Click += new System.EventHandler(this.btn_GetDownloadLinks_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1102, 1108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 22);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
             // 
             // MainForm
             // 
@@ -518,15 +518,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.container_Main.ResumeLayout(false);
-            this.panel_4.ResumeLayout(false);
-            this.panel_4.PerformLayout();
-            this.panel_3.ResumeLayout(false);
-            this.panel_3.PerformLayout();
             this.panel_2.ResumeLayout(false);
             this.panel_2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GetTorrentsCount)).EndInit();
             this.panel_1.ResumeLayout(false);
             this.panel_1.PerformLayout();
+            this.panel_4.ResumeLayout(false);
+            this.panel_4.PerformLayout();
+            this.panel_3.ResumeLayout(false);
+            this.panel_3.PerformLayout();
             this.ResumeLayout(false);
 
         }
