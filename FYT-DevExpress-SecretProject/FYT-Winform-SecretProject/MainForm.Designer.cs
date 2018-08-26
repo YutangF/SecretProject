@@ -214,10 +214,10 @@
             this.container_Main.Appearance.BackColor = System.Drawing.Color.White;
             this.container_Main.Appearance.Options.UseBackColor = true;
             this.container_Main.AutoScroll = false;
+            this.container_Main.Controls.Add(this.panel_3);
             this.container_Main.Controls.Add(this.panel_2);
             this.container_Main.Controls.Add(this.panel_1);
             this.container_Main.Controls.Add(this.panel_4);
-            this.container_Main.Controls.Add(this.panel_3);
             this.container_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container_Main.Location = new System.Drawing.Point(433, 45);
             this.container_Main.Name = "container_Main";

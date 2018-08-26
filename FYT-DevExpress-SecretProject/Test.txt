@@ -1,2 +1,0 @@
-Test on Gig;
-Test on GitHub;

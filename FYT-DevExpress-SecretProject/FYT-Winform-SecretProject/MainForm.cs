@@ -213,7 +213,7 @@ namespace FYT_Winform_SecretProject
             Decompress(handleTorrentPath);                //将种子文件解压到当前目录
             DeleteRARFiles(handleTorrentPath);             //删除当前目录下的rar文件
             string outputFilePath=GetDownloadLinks(handleTorrentPath);       //提取所有下载地址
-            MoveTorrents(handleTorrentPath, Path.Combine(iCloudPath, "Complete"));
+            MoveCompletedTorrents(handleTorrentPath, Path.Combine(iCloudPath, "Complete"));
 
             //打开记事本
             System.Diagnostics.Process.Start("notepad.exe", outputFilePath);
@@ -415,6 +415,29 @@ namespace FYT_Winform_SecretProject
                 Console.WriteLine(e.Message);
             }
         }
+
+        /// <summary>
+        /// 移动已经提取下载地址的文件
+        /// </summary>
+        /// <param name="folderPath"></param>
+        /// <param name="destPath"></param>
+        private void MoveCompletedTorrents(string folderPath,string destPath)
+        {
+            var fileNameList = Directory.EnumerateFiles(folderPath);
+            try
+            {
+                foreach (var fileName in fileNameList)
+                {
+                    File.Move(fileName, Path.Combine(destPath, Path.GetFileName(fileName)));
+                }
+            }
+            catch (IOException e)
+            {
+                MessageBox.Show("Error : " + e.Message);
+            }
+        }
+        
+        
         /// <summary>
         /// 计算已经完成的RAR文件数
         /// </summary>
