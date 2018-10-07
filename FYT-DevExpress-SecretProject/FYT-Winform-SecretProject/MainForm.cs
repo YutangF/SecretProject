@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.Win32;
@@ -137,6 +138,43 @@ namespace FYT_Winform_SecretProject
             MessageBox.Show(UpdateRARFilesNum(downloadPath).ToString());
         }
 
+        //重命名文件侧边栏项目：点击
+        private void accordionControlElement5_Click(object sender, EventArgs e)
+        {
+            //提示确认
+
+        }
+
+        /// <summary>
+        /// 打开iCloud文件夹
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer", iCloudPath);
+        }
+
+        /// <summary>
+        /// 打开种子临时处理路径
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer", handleTorrentPath);
+        }
+
+        /// <summary>
+        /// 打开RAR文件路径
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void accordionControlElement4_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer", downloadPath);
+        }
+
         private void btn_ChooseiCloudPath_Click(object sender, EventArgs e)
         {
             //打开路径选择框选择iCloud的目录路径
@@ -189,6 +227,10 @@ namespace FYT_Winform_SecretProject
         /// <param name="e"></param>
         private void btn_ChooseCommonTorrents_Click(object sender, EventArgs e)
         {
+            if(!Directory.Exists(handleTorrentPath))
+            {
+                Directory.CreateDirectory(handleTorrentPath);
+            }
             GetTorrentsFromiCloud(Path.Combine(iCloudPath, "Torrents"), handleTorrentPath, uiGetTorrentNum);
             MessageBox.Show("Complete","Result");
         }
@@ -199,6 +241,10 @@ namespace FYT_Winform_SecretProject
         /// <param name="e"></param>
         private void btn_ChooseClassicTorrents_Click(object sender, EventArgs e)
         {
+            if (!Directory.Exists(handleTorrentPath))
+            {
+                Directory.CreateDirectory(handleTorrentPath);
+            }
             GetTorrentsFromiCloud(Path.Combine(iCloudPath, "Torrents","Classic"), handleTorrentPath, uiGetTorrentNum);
             MessageBox.Show("Complete", "Result");
         }
@@ -209,10 +255,26 @@ namespace FYT_Winform_SecretProject
         /// <param name="e"></param>
         private void btn_GetDownloadLinks_Click(object sender, EventArgs e)
         {
-            //string rarExePath = GetWinRarpath();
+
+            //检查目标路径是否存在压缩文件
+            var rarFilesName = from x in Directory.EnumerateFiles(handleTorrentPath)
+                               where Path.GetExtension(x) == ".rar"
+                               select x;
+            if (rarFilesName.Count<string>() == 0)
+            {
+                MessageBox.Show("没有找到压缩文件！");
+                return;
+            }
+
             Decompress(handleTorrentPath);                //将种子文件解压到当前目录
             DeleteRARFiles(handleTorrentPath);             //删除当前目录下的rar文件
-            string outputFilePath=GetDownloadLinks(handleTorrentPath);       //提取所有下载地址
+            //复位链接计数
+            label_DownloadLinkCount.Text = Regex.Replace(label_DownloadLinkCount.Text, @"[0-9]", "0");
+            string outputFilePath=GetDownloadLinks(handleTorrentPath,int.Parse(txb_DownloadLinkLine.Text));       //提取所有下载地址
+            if(string.IsNullOrEmpty(outputFilePath))
+            {
+                return;
+            }
             MoveCompletedTorrents(handleTorrentPath, Path.Combine(iCloudPath, "Complete"));
 
             //打开记事本
@@ -227,6 +289,45 @@ namespace FYT_Winform_SecretProject
         private void numericUpDown_GetTorrentsCount_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        //设置提取下载地址行号_RAR文件按钮：点击
+        private void btn_SetDownloadLinkLine_RARFile_Click(object sender, EventArgs e)
+        {
+            txb_DownloadLinkLine.Text = "16";
+            btn_SetDownloadLinkLine_RARFile.Selected = true;
+            btn_SetDownloadLinkLine_Online.Selected = false;
+        }
+
+        //设置提取下载地址行号_云播按钮：点击
+        private void btn_SetDownloadLinkLine_Online_Click(object sender, EventArgs e)
+        {
+            txb_DownloadLinkLine.Text = "26";
+            btn_SetDownloadLinkLine_RARFile.Selected = false;
+            btn_SetDownloadLinkLine_Online.Selected = true;
+        }
+
+        //提取下载链接板块：Visible改变事件
+        private void panel_3_VisibleChanged(object sender, EventArgs e)
+        {
+            if (panel_3.Visible)
+            {
+                label_TorrnetHandlePath.Text = handleTorrentPath;
+                //设置默认提取下载链接模式
+                btn_SetDownloadLinkLine_Online_Click(this, null);
+            }
+        }
+
+        //更改种子文件处理路径按钮：点击
+        private void btn_ChangeTorrentHandlePath_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
+            folderDlg.ShowNewFolderButton = true;
+            if (folderDlg.ShowDialog() == DialogResult.OK)
+            {
+                handleTorrentPath = folderDlg.SelectedPath;
+                label_TorrnetHandlePath.Text = handleTorrentPath;
+            }
         }
 
         #endregion
@@ -267,11 +368,33 @@ namespace FYT_Winform_SecretProject
         private void GetTorrentsFromiCloud(string filePath,string destPath,uint count)
         {
             txb_TorrentsToDownload.Clear();
-            var files = GetFileList(filePath,count);
-            foreach(var file in files)
+            if(chkBox_ChooseTorrents_Random.Checked)
             {
-                File.Move(file.FileName, Path.Combine(destPath, Path.GetFileName(file.FileName)));
-                txb_TorrentsToDownload.AppendText(Path.GetFileName(file.FileName) + "\n");
+                //随机抽选种子
+                List<string> strsAllFilePath = Directory.EnumerateFiles(filePath).ToList<string>();
+                Random r = new Random();
+                List<string> strsResultPath = new List<string>();
+                for(uint i=0;i<count;++i)
+                {
+                    strsResultPath.Add(strsAllFilePath[r.Next(0, strsAllFilePath.Count)]);
+                }
+                //移动结果种子
+                foreach(var fileName in strsResultPath)
+                {
+                    File.Move(fileName, Path.Combine(destPath, Path.GetFileName(fileName)));
+                    txb_TorrentsToDownload.AppendText(Path.GetFileName(fileName) + "\n");
+
+                }
+            }
+            else
+            {
+                //抽选最新种子
+                var files = GetFileList(filePath, count);
+                foreach (var file in files)
+                {
+                    File.Move(file.FileName, Path.Combine(destPath, Path.GetFileName(file.FileName)));
+                    txb_TorrentsToDownload.AppendText(Path.GetFileName(file.FileName) + "\n");
+                }
             }
         }
 
@@ -307,6 +430,9 @@ namespace FYT_Winform_SecretProject
             //如果传入目标路径为空，则目标路径与源路径相同
             if (destPath == "DefaultPath")
                 destPath = folderPath;
+
+           
+            
 
             //获取winRAR执行路径
             string rarPath = GetWinRarpath();
@@ -354,7 +480,7 @@ namespace FYT_Winform_SecretProject
         /// 从指定目录下的所有文本文件中提取特定行的地址
         /// </summary>
         /// <param name="DirectoryPath"></param>
-        private static string GetDownloadLinks(string DirectoryPath)
+        private  string GetDownloadLinks(string DirectoryPath,int iLine)
         {
             String[] Files = Directory.GetFiles(DirectoryPath);
             //输出文件路径
@@ -371,16 +497,81 @@ namespace FYT_Winform_SecretProject
                 using (var ReadFileStream = File.OpenRead(FilePath))
                 {
                     StreamReader SourceReader = new StreamReader(ReadFileStream);
-                    for (int iLine = 1; iLine < 16; ++iLine)
+
+                    List<string> strAllLines = new List<string>();
+                    string strTemp = "";
+                    strTemp = SourceReader.ReadToEnd();
+                    strTemp = strTemp.Replace("\r\n", "\r");
+                    strAllLines = strTemp.Split('\r').ToList<string>();
+
+
+                    //提取所有包含下载地址的行
+                    List<string> strsDownloadLink = (from x in strAllLines
+                                                     where (x.Contains("http") || x.Contains("magnet"))&&(!x.Contains("解壓密碼"))&&(!x.Contains("1fichier"))
+                                                     select x).ToList<string>();
+
+                    if(strsDownloadLink.Count==0)
                     {
-                        string Temp = SourceReader.ReadLine();
-                        if (iLine == 15)
+                        MessageBox.Show("文件：" + Path.GetFileName(FilePath) + "  提取下载链接失败！！！");
+                        return "";
+                    }
+
+                   //检测磁链（旧）
+                   if(strsDownloadLink[0].Contains("magnet"))
+                    {
+                        foreach(var link in strsDownloadLink)
                         {
-                            ResultWriter.WriteLine(Temp);
+                            ResultWriter.WriteLine(link);
+                            txb_DownloadLinks.AppendText(link + "\n");
                             if ((++cResultLine) % 15 == 0)
                                 ResultWriter.WriteLine();
                         }
                     }
+                   else
+                    {
+                        //普通链接
+                        //提取云播地址
+                        List<string> strsOnlineLink = (from x in strsDownloadLink
+                                                       where Path.GetExtension(x) == ".mp4"
+                                                       select x).ToList<string>();
+                        if(strsOnlineLink.Count!=0)
+                        {
+                            //检测到云播地址
+                            foreach(var link in strsOnlineLink)
+                            {
+                                ResultWriter.WriteLine(link);
+                                txb_DownloadLinks.AppendText(link + "\n");
+                                if ((++cResultLine) % 15 == 0)
+                                    ResultWriter.WriteLine();
+                            }
+                        }
+                        else
+                        {
+                            //处理RAR文件链接
+                            List<string> strsRARLink = (from x in strsDownloadLink
+                                                        where Path.GetExtension(x) == ".rar"
+                                                        select x).ToList<string>();
+                            if(strsRARLink.Count==0)
+                            {
+                                MessageBox.Show("文件：" + Path.GetFileName(FilePath) + "  提取下载链接失败！！！");
+                                return "";
+                            }
+                            //检测到RAR地址
+                            foreach (var link in strsRARLink)
+                            {
+                                ResultWriter.WriteLine(link);
+                                txb_DownloadLinks.AppendText(link + "\n");
+                                if ((++cResultLine) % 15 == 0)
+                                    ResultWriter.WriteLine();
+                            }
+                        }
+                    }
+
+                 
+
+                    //更新提取链接计数
+                    label_DownloadLinkCount.Text = Regex.Replace(label_DownloadLinkCount.Text, @"[0-9]", cResultLine.ToString());
+
                 }
             }
             ResultWriter.Flush();
@@ -424,16 +615,17 @@ namespace FYT_Winform_SecretProject
         private void MoveCompletedTorrents(string folderPath,string destPath)
         {
             var fileNameList = Directory.EnumerateFiles(folderPath);
-            try
+
+            foreach (var fileName in fileNameList)
             {
-                foreach (var fileName in fileNameList)
+                try
                 {
                     File.Move(fileName, Path.Combine(destPath, Path.GetFileName(fileName)));
                 }
-            }
-            catch (IOException e)
-            {
-                MessageBox.Show("Error : " + e.Message);
+                catch(Exception ex)
+                {
+                    MessageBox.Show("文件：" + fileName + " 移动失败\n异常信息：" + ex.Message);
+                }
             }
         }
         
@@ -496,34 +688,27 @@ namespace FYT_Winform_SecretProject
 
 
 
+
+
+
+
+
+
+
+
         #endregion
 
-        /// <summary>
-        /// 打开iCloud文件夹
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void accordionControlElement2_Click(object sender, EventArgs e)
+        //清空下载链接监视文本框按钮：点击
+        private void btn_ClearDownloadLinks_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer", iCloudPath);
+            txb_DownloadLinks.Clear();
+            label_DownloadLinkCount.Text = Regex.Replace(label_DownloadLinkCount.Text, @"[0-9]", "");
         }
-        /// <summary>
-        /// 打开种子临时处理路径
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void accordionControlElement3_Click(object sender, EventArgs e)
+
+        //清空分类种子监视文本框按钮：点击
+        private void btn_ClassifyTorrentClear_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer", handleTorrentPath);
-        }
-        /// <summary>
-        /// 打开RAR文件路径
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void accordionControlElement4_Click(object sender, EventArgs e)
-        {
-            Process.Start("explorer", downloadPath);
+            txb_ClassifyFileName.Clear();
         }
     }
 }
